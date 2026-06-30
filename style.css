@@ -34,12 +34,17 @@ header{
     z-index:1000;
 }
 
-.navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 8%;
-    transition:.3s;
+/* Ajusta o container da logo */
+.navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+/* Define o tamanho da imagem da logo */
+.navbar .logo img {
+    height: 42px;   /* Altura ideal para a barra */
+    width: auto;    /* Mantém a proporção original */
+    object-fit: contain;
 }
 
 .navbar.scroll{
