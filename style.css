@@ -42,6 +42,20 @@ header{
     transition:.3s;
 }
 
+/* Logo da barra de navegação */
+.navbar .logo img {
+    height: 40px; /* altura adequada */
+    width: auto;
+    display: block;
+}
+
+/* Se usar a logo também na seção inicial */
+.hero-text .logo-hero {
+    height: 60px;
+    width: auto;
+    margin-bottom: 20px;
+}
+
 .navbar.scroll{
     background:#111;
     box-shadow:0 0 20px rgba(0,0,0,.5);
