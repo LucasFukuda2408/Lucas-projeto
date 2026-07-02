@@ -1,195 +1,40 @@
-// ===============================
-// EFEITO DE DIGITAÇÃO
-// ===============================
-
-const texto = [
-    "Desenvolvedor Front-End",
+const texto = document.getElementById("typing");
+const frases = [
     "Estudante de TI",
-    "Criador de Projetos",
-    "Apaixonado por Tecnologia"
+    "Desenvolvedor Web",
+    "Focado em Tecnologia",
+    "Criador de Soluções"
 ];
 
-let contadorTexto = 0;
-let contadorLetra = 0;
-let apagando = false;
+let indiceFrase = 0;
+let indiceLetra = 0;
+let estaApagando = false;
 
-const typing = document.getElementById("typing");
+function digitar() {
+    const fraseAtual = frases[indiceFrase];
 
-function escrever() {
-
-    const palavra = texto[contadorTexto];
-
-    if (!apagando) {
-
-        typing.textContent = palavra.substring(0, contadorLetra);
-
-        contadorLetra++;
-
-        if (contadorLetra > palavra.length) {
-
-            apagando = true;
-
-            setTimeout(escrever, 1500);
-
-            return;
-        }
-
+    if (!estaApagando) {
+        texto.textContent = fraseAtual.substring(0, indiceLetra + 1);
+        indiceLetra++;
     } else {
-
-        typing.textContent = palavra.substring(0, contadorLetra);
-
-        contadorLetra--;
-
-        if (contadorLetra < 0) {
-
-            apagando = false;
-
-            contadorTexto++;
-
-            if (contadorTexto >= texto.length) {
-
-                contadorTexto = 0;
-
-            }
-
-        }
-
+        texto.textContent = fraseAtual.substring(0, indiceLetra - 1);
+        indiceLetra--;
     }
 
-    setTimeout(escrever, apagando ? 40 : 90);
+    let velocidade = estaApagando ? 40 : 110;
 
+    if (!estaApagando && indiceLetra === fraseAtual.length) {
+        velocidade = 2200;
+        estaApagando = true;
+    }
+
+    if (estaApagando && indiceLetra === 0) {
+        estaApagando = false;
+        indiceFrase = (indiceFrase + 1) % frases.length;
+        velocidade = 450;
+    }
+
+    setTimeout(digitar, velocidade);
 }
 
-escrever();
-
-
-// ===============================
-// NAVBAR
-// ===============================
-
-const navbar = document.querySelector(".navbar");
-
-window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 50) {
-
-        navbar.classList.add("scroll");
-
-    } else {
-
-        navbar.classList.remove("scroll");
-
-    }
-
-});
-
-
-// ===============================
-// SCROLL SUAVE
-// ===============================
-
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-
-    link.addEventListener("click", function(e){
-
-        e.preventDefault();
-
-        const destino = document.querySelector(this.getAttribute("href"));
-
-        destino.scrollIntoView({
-
-            behavior: "smooth"
-
-        });
-
-    });
-
-});
-
-
-// ===============================
-// ANIMAÇÃO DOS CARDS
-// ===============================
-
-const elementos = document.querySelectorAll(
-    ".card, .projeto, section"
-);
-
-const observer = new IntersectionObserver((entries)=>{
-
-    entries.forEach((entry)=>{
-
-        if(entry.isIntersecting){
-
-            entry.target.classList.add("mostrar");
-
-        }
-
-    });
-
-},{
-    threshold:0.2
-});
-
-elementos.forEach((el)=>{
-
-    observer.observe(el);
-
-});
-
-
-// ===============================
-// BOTÃO VOLTAR AO TOPO
-// ===============================
-
-const botaoTopo = document.createElement("button");
-
-botaoTopo.innerHTML = "↑";
-
-botaoTopo.id = "topo";
-
-document.body.appendChild(botaoTopo);
-
-window.addEventListener("scroll", ()=>{
-
-    if(window.scrollY > 400){
-
-        botaoTopo.style.display = "block";
-
-    }else{
-
-        botaoTopo.style.display = "none";
-
-    }
-
-});
-
-botaoTopo.addEventListener("click", ()=>{
-
-    window.scrollTo({
-
-        top:0,
-
-        behavior:"smooth"
-
-    });
-
-});
-
-
-// ===============================
-// ANO AUTOMÁTICO NO RODAPÉ
-// ===============================
-
-const footer = document.querySelector("footer");
-
-footer.innerHTML =
-`© ${new Date().getFullYear()} Lucas Fukuda • Todos os direitos reservados.`;
-
-
-// ===============================
-// MENSAGEM NO CONSOLE
-// ===============================
-
-console.log("%cBem-vindo ao meu Portfólio!",
-"color:#8b5cf6;font-size:20px;font-weight:bold;");
+window.addEventListener("load", digitar);
