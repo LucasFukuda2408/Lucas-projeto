@@ -85,28 +85,39 @@ header {
     min-height: 100vh;
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Isso alinha texto e foto no centro vertical */
-    padding: 60px 8%;
-    gap: 40px;
-    flex-wrap: wrap;
+    align-items: center; /* Alinha tudo no centro vertical */
+    padding: 100px 8% 60px;
+    gap: 50px;
+    flex-wrap: nowrap; /* 🔴 Isso é o principal: NÃO deixa quebrar linha */
+    width: 100%;
 }
 
 .hero-text {
-    flex: 1 1 400px; /* Ocupa espaço disponível */
+    flex: 1; /* Ocupa todo o espaço disponível do lado esquerdo */
     max-width: 600px;
 }
 
 .hero-img {
-    flex: 1 1 300px; /* Ocupa espaço ao lado do texto */
+    flex-shrink: 0; /* 🔴 Impede que a imagem encolha ou desça */
     text-align: center;
 }
 
 .hero-img img {
     width: 320px;
+    height: 320px;
     border-radius: 50%;
     border: 4px solid #8b5cf6;
     box-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
     object-fit: cover;
+}
+
+/* 📱 AQUI sim, só em telas pequenas a foto vai para baixo */
+@media (max-width: 992px) {
+    .hero {
+        flex-wrap: wrap; /* Volta a permitir quebrar só no celular */
+        justify-content: center;
+        text-align: center;
+    }
 }
 
 .hero h1 {
