@@ -1,5 +1,5 @@
 /* ============================= */
-/* RESET */
+/* RESET GERAL */
 /* ============================= */
 * {
     margin: 0;
@@ -16,11 +16,11 @@ body {
         url("assets/img/Tecnology.jpg") center center / cover no-repeat;
     background-size: cover;
     backdrop-filter: blur(3px);
-    padding-top: 80px; /* Espaço para não ficar coberto pela barra fixa */
+    padding-top: 80px; /* Espaço para o conteúdo não ficar escondido pela barra */
 }
 
 /* ============================= */
-/* NAVBAR - CORRIGIDA */
+/* BARRA DE NAVEGAÇÃO - CORRIGIDA */
 /* ============================= */
 header {
     position: fixed;
@@ -30,33 +30,21 @@ header {
     z-index: 1000;
     background-color: #0a0a0f; /* Fundo escuro sólido */
     padding: 15px 5%;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3); /* Sombra para separar do conteúdo */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center; /* Centraliza o menu já que não tem logo */
+    gap: 40px;
     width: 100%;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Logo */
-.navbar .logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-.navbar .logo img {
-    height: 40px;
-    width: auto;
-    object-fit: contain;
-}
-
-/* Menu */
-.navbar .menu {
+/* Menu de links */
+.menu {
     display: flex;
     list-style: none;
     gap: 35px;
@@ -64,23 +52,23 @@ header {
     padding: 0;
 }
 
-.navbar .menu a {
+.menu a {
     color: #ffffff;
     text-decoration: none;
     font-size: 1rem;
     transition: color 0.3s ease;
 }
 
-.navbar .menu a:hover {
+.menu a:hover {
     color: #8b5cf6;
 }
 
-/* Botão Currículo */
+/* Botão Baixar Currículo */
 .btn-cv {
     background: #8b5cf6;
     color: white;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 10px 22px;
     border-radius: 8px;
     font-size: 0.95rem;
     white-space: nowrap;
@@ -93,7 +81,7 @@ header {
 }
 
 /* ============================= */
-/* HERO */
+/* RESTO DO LAYOUT */
 /* ============================= */
 .hero {
     min-height: 100vh;
@@ -160,9 +148,6 @@ header {
     background: #8b5cf6;
 }
 
-/* ============================= */
-/* REDES */
-/* ============================= */
 .redes {
     margin-top: 40px;
     display: flex;
@@ -191,9 +176,6 @@ header {
     object-fit: cover;
 }
 
-/* ============================= */
-/* SEÇÕES */
-/* ============================= */
 section {
     padding: 80px 8%;
 }
@@ -204,9 +186,6 @@ section h2 {
     margin-bottom: 40px;
 }
 
-/* ============================= */
-/* HABILIDADES */
-/* ============================= */
 .skills {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -229,9 +208,6 @@ section h2 {
     box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
 }
 
-/* ============================= */
-/* PROJETOS */
-/* ============================= */
 .projetos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -282,9 +258,6 @@ section h2 {
     color: #6d28d9;
 }
 
-/* ============================= */
-/* CONTATO */
-/* ============================= */
 .contato {
     text-align: center;
     display: flex;
@@ -310,9 +283,6 @@ section h2 {
     font-size: 1.2rem;
 }
 
-/* ============================= */
-/* RODAPÉ */
-/* ============================= */
 footer {
     text-align: center;
     padding: 30px;
@@ -322,16 +292,17 @@ footer {
 }
 
 /* ============================= */
-/* RESPONSIVO */
+/* RESPONSIVO PARA CELULARES */
 /* ============================= */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     .navbar {
         flex-direction: column;
         gap: 15px;
+        padding: 15px 5%;
     }
 
     .menu {
-        gap: 20px;
+        gap: 18px;
         flex-wrap: wrap;
         justify-content: center;
     }
@@ -339,38 +310,14 @@ footer {
     .hero {
         flex-direction: column;
         text-align: center;
-        padding-top: 60px;
+        padding-top: 40px;
     }
 
     .hero h1 {
-        font-size: 45px;
+        font-size: 40px;
     }
 
     .hero-img img {
-        width: 250px;
-    }
-
-    .botoes {
-        justify-content: center;
-    }
-
-    .redes {
-        justify-content: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .menu {
-        gap: 12px;
-        font-size: 0.9rem;
-    }
-
-    .btn-cv {
-        padding: 8px 16px;
-        font-size: 0.9rem;
-    }
-
-    .hero h1 {
-        font-size: 36px;
+        width: 220px;
     }
 }
