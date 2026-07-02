@@ -1,9 +1,9 @@
 const texto = document.getElementById("typing");
 const frases = [
     "Estudante de TI",
-    "Desenvolvedor Web",
-    "Focado em Tecnologia",
-    "Criador de Soluções"
+    "Desenvolvedor Sites",
+    "Procurando emprego",
+    "Aluno na Fiap"
 ];
 
 let indiceFrase = 0;
