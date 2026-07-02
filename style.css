@@ -157,14 +157,12 @@ header {
     min-width: 320px;
 }
 
-.hero-img img {
-  width: 200px;   /* largura da imagem */
-  height: 200px;  /* altura da imagem */
-  object-fit: cover; /* mantém proporção sem distorcer */
-  border-radius: 50%; /* deixa a foto redonda */
+.perfil {
+  width: 200px;        /* largura da imagem */
+  height: auto;        /* altura proporcional */
+  border-radius: 50%;  /* deixa a foto redonda */
   border: 3px solid #8b5cf6; /* borda roxa */
-  box-shadow: 0 0 20px rgba(139,92,246,.4); /* sombra suave */
-  transition: .3s;
+  box-shadow: 0 0 15px rgba(139,92,246,.4); /* sombra suave */
 }
 
 .hero-img img:hover {
