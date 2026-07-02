@@ -7,21 +7,24 @@
 }
 
 body {
+    background: #0d0d0d;
+    color: white;
     font-family: Arial, Helvetica, sans-serif;
-    color: #fff;
     background: linear-gradient(rgba(13,13,13,.75), rgba(13,13,13,.85)),
-                url("assets/img/Tecnology.jpg") center/cover no-repeat fixed;
+        url("assets/img/Tecnology.jpg") center center / cover no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(3px);
     padding-top: 75px;
 }
 
-/* Barra de navegação */
+/* Barra de navegação com fundo */
 header {
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 999;
-    background: #0a0a0f;
+    background-color: #0a0a0f;
     padding: 15px 5%;
     box-shadow: 0 2px 10px rgba(0,0,0,0.4);
 }
@@ -41,10 +44,10 @@ header {
 }
 
 .menu a {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
     font-size: 1rem;
-    transition: 0.3s;
+    transition: color 0.3s;
 }
 
 .menu a:hover {
@@ -53,27 +56,30 @@ header {
 
 .btn-cv {
     background: #8b5cf6;
-    color: #fff;
+    color: #ffffff;
     padding: 10px 22px;
     border-radius: 8px;
     text-decoration: none;
-    transition: 0.3s;
+    font-size: 0.95rem;
+    transition: background 0.3s;
 }
 
 .btn-cv:hover {
     background: #6d28d9;
 }
 
-/* Seção principal */
+/* Seção principal: foto ao lado do texto */
 .hero {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     min-height: calc(100vh - 75px);
-    max-width: 1400px;
-    margin: auto;
     padding: 40px 8%;
-    gap: 60px;
+    gap: 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+    flex-wrap: nowrap;
 }
 
 .hero-text {
@@ -103,18 +109,16 @@ header {
     margin-top: 35px;
     display: flex;
     gap: 15px;
-}
-
-.btn, .btn2 {
-    padding: 12px 25px;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: .3s;
+    flex-wrap: wrap;
 }
 
 .btn {
     background: #8b5cf6;
-    color: #fff;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
 }
 
 .btn:hover {
@@ -123,7 +127,11 @@ header {
 
 .btn2 {
     border: 2px solid #8b5cf6;
-    color: #fff;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
 }
 
 .btn2:hover {
@@ -139,56 +147,20 @@ header {
 .redes a {
     color: white;
     font-size: 28px;
-    transition: 0.3s;
+    transition: color 0.3s;
 }
 
 .redes a:hover {
     color: #8b5cf6;
 }
 
-.hero-img img {
-    width: 320px;
-    height: 320px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid #8b5cf6;
-    box-shadow: 0 0 30px rgba(139,92,246,.45);
-    transition: .4s;
+.hero-img {
+    flex: 0 0 auto;
+    text-align: center;
+    min-width: 320px;
 }
 
-.hero-img img:hover {
-    transform: scale(1.05);
-}
-
-/* Responsivo */
-@media (max-width: 991px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-        padding-top: 60px;
-    }
-    .hero-text {
-        max-width: 100%;
-    }
-    .botoes, .redes {
-        justify-content: center;
-    }
-}
-
-@media (max-width: 900px) {
-    .navbar {
-        flex-direction: column;
-        gap: 12px;
-        padding: 15px 5%;
-    }
-    .menu {
-        gap: 18px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-}
-
-/* Seções */
+/* Outras seções */
 section {
     padding: 80px 8%;
     max-width: 1400px;
@@ -213,6 +185,12 @@ section h2 {
     border-radius: 10px;
     text-align: center;
     border: 1px solid #2a2a35;
+    transition: 0.3s;
+}
+
+.card:hover {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 15px rgba(139,92,246,0.25);
 }
 
 .projetos {
@@ -226,6 +204,12 @@ section h2 {
     border-radius: 10px;
     overflow: hidden;
     border: 1px solid #2a2a35;
+    transition: 0.3s;
+}
+
+.projeto:hover {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 20px rgba(139,92,246,0.25);
 }
 
 .projeto img {
@@ -234,8 +218,23 @@ section h2 {
     object-fit: cover;
 }
 
-.projeto h3, .projeto p {
+.projeto h3 {
     margin: 15px;
+    font-size: 1.2rem;
+}
+
+.projeto p {
+    margin: 0 15px 15px;
+    color: #bdbdbd;
+    line-height: 22px;
+}
+
+.projeto a.btn-projeto {
+    display: inline-block;
+    margin: 0 15px 15px;
+    color: #8b5cf6;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .contato {
@@ -243,12 +242,18 @@ section h2 {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    align-items: center;
 }
 
 .contato a {
     color: white;
     text-decoration: none;
     font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.contato a:hover {
+    color: #8b5cf6;
 }
 
 footer {
@@ -257,4 +262,34 @@ footer {
     background: #111118;
     color: #b0b0bc;
     margin-top: 50px;
+}
+
+/* Responsivo: só no celular a foto vai para baixo */
+@media (max-width: 991px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 80px;
+        gap: 40px;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .botoes, .redes {
+        justify-content: center;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px 5%;
+    }
+
+    .menu {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
