@@ -1,5 +1,5 @@
 /* ============================= */
-/* RESET GERAL */
+/* RESET */
 /* ============================= */
 * {
     margin: 0;
@@ -10,17 +10,17 @@
 
 body {
     background: #0d0d0d;
-    color: white;
+    color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(rgba(13, 13, 13, 0.75), rgba(13, 13, 13, 0.85)),
+    background: linear-gradient(rgba(13, 13, 13, 0.78), rgba(13, 13, 13, 0.88)),
         url("assets/img/Tecnology.jpg") center center / cover no-repeat;
     background-size: cover;
     backdrop-filter: blur(3px);
-    padding-top: 80px; /* Espaço para o conteúdo não ficar escondido pela barra */
+    padding-top: 75px; /* Espaço para não ficar coberto pela barra */
 }
 
 /* ============================= */
-/* BARRA DE NAVEGAÇÃO - CORRIGIDA */
+/* NAVBAR - CORRIGIDA SEM LOGO */
 /* ============================= */
 header {
     position: fixed;
@@ -28,28 +28,24 @@ header {
     top: 0;
     left: 0;
     z-index: 1000;
-    background-color: #0a0a0f; /* Fundo escuro sólido */
-    padding: 15px 5%;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    background-color: #0f0f14;
+    padding: 12px 5%;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.5);
 }
 
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: center; /* Centraliza o menu já que não tem logo */
-    gap: 40px;
-    width: 100%;
+    justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
 }
 
-/* Menu de links */
 .menu {
     display: flex;
     list-style: none;
-    gap: 35px;
-    margin: 0;
-    padding: 0;
+    gap: 32px;
 }
 
 .menu a {
@@ -63,12 +59,11 @@ header {
     color: #8b5cf6;
 }
 
-/* Botão Baixar Currículo */
 .btn-cv {
     background: #8b5cf6;
-    color: white;
+    color: #ffffff;
     text-decoration: none;
-    padding: 10px 22px;
+    padding: 9px 20px;
     border-radius: 8px;
     font-size: 0.95rem;
     white-space: nowrap;
@@ -77,11 +72,11 @@ header {
 
 .btn-cv:hover {
     background: #6d28d9;
-    transform: scale(1.03);
+    transform: scale(1.04);
 }
 
 /* ============================= */
-/* RESTO DO LAYOUT */
+/* HERO */
 /* ============================= */
 .hero {
     min-height: 100vh;
@@ -89,54 +84,54 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 40px 8%;
-    gap: 50px;
+    gap: 40px;
     flex-wrap: wrap;
 }
 
 .hero-text {
-    max-width: 600px;
+    max-width: 580px;
 }
 
 .hero h1 {
-    font-size: 60px;
-    margin: 15px 0;
+    font-size: 56px;
+    margin: 12px 0;
 }
 
 .hero h2 {
     color: #8b5cf6;
-    margin-bottom: 20px;
     min-height: 45px;
     font-size: 2rem;
+    margin-bottom: 20px;
 }
 
 .descricao {
-    line-height: 30px;
-    color: #bdbdbd;
+    line-height: 28px;
+    color: #d0d0d0;
     font-size: 1.1rem;
 }
 
 .botoes {
-    margin-top: 40px;
+    margin-top: 35px;
     display: flex;
-    gap: 15px;
+    gap: 16px;
     flex-wrap: wrap;
 }
 
 .btn {
     background: #8b5cf6;
-    color: white;
+    color: #ffffff;
+    padding: 14px 28px;
+    border-radius: 8px;
     text-decoration: none;
-    padding: 15px 30px;
-    border-radius: 10px;
     transition: 0.3s;
 }
 
 .btn2 {
     border: 2px solid #8b5cf6;
-    color: white;
+    color: #ffffff;
+    padding: 14px 28px;
+    border-radius: 8px;
     text-decoration: none;
-    padding: 15px 30px;
-    border-radius: 10px;
     transition: 0.3s;
 }
 
@@ -149,14 +144,14 @@ header {
 }
 
 .redes {
-    margin-top: 40px;
+    margin-top: 35px;
     display: flex;
-    gap: 20px;
+    gap: 22px;
 }
 
 .redes a {
-    color: white;
-    font-size: 30px;
+    color: #ffffff;
+    font-size: 28px;
     transition: 0.3s;
 }
 
@@ -169,85 +164,95 @@ header {
 }
 
 .hero-img img {
-    width: 350px;
+    width: 320px;
     border-radius: 50%;
-    border: 5px solid #8b5cf6;
-    box-shadow: 0 0 50px #8b5cf6;
+    border: 4px solid #8b5cf6;
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.4);
     object-fit: cover;
 }
 
+/* ============================= */
+/* SEÇÕES GERAIS */
+/* ============================= */
 section {
     padding: 80px 8%;
 }
 
 section h2 {
     text-align: center;
-    font-size: 40px;
+    font-size: 38px;
     margin-bottom: 40px;
+    color: #ffffff;
 }
 
+/* ============================= */
+/* HABILIDADES */
+/* ============================= */
 .skills {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
+    gap: 25px;
 }
 
 .card {
-    background: #171717;
-    padding: 40px;
-    border-radius: 15px;
+    background: #18181f;
+    padding: 35px;
+    border-radius: 12px;
     text-align: center;
-    transition: 0.3s;
-    border: 1px solid #2a2a2a;
+    border: 1px solid #2a2a35;
     font-size: 1.2rem;
+    transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
     border-color: #8b5cf6;
-    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+    box-shadow: 0 0 18px rgba(139, 92, 246, 0.25);
 }
 
+/* ============================= */
+/* PROJETOS */
+/* ============================= */
 .projetos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 28px;
 }
 
 .projeto {
-    background: #171717;
-    border-radius: 15px;
+    background: #18181f;
+    border-radius: 12px;
     overflow: hidden;
+    border: 1px solid #2a2a35;
     transition: 0.3s;
-    border: 1px solid #2a2a2a;
 }
 
 .projeto:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 25px rgba(139, 92, 246, 0.3);
+    transform: translateY(-8px);
     border-color: #8b5cf6;
+    box-shadow: 0 0 22px rgba(139, 92, 246, 0.25);
 }
 
 .projeto img {
     width: 100%;
-    height: 200px;
+    height: 190px;
     object-fit: cover;
 }
 
 .projeto h3 {
-    margin: 20px;
+    margin: 18px;
     font-size: 1.3rem;
 }
 
 .projeto p {
-    margin: 0 20px 20px;
-    color: #bdbdbd;
+    margin: 0 18px 18px;
+    color: #bdbdc8;
     line-height: 24px;
 }
 
 .projeto a {
     display: inline-block;
-    margin: 0 20px 20px;
+    margin: 0 18px 18px;
     color: #8b5cf6;
     text-decoration: none;
     font-weight: bold;
@@ -258,6 +263,9 @@ section h2 {
     color: #6d28d9;
 }
 
+/* ============================= */
+/* CONTATO */
+/* ============================= */
 .contato {
     text-align: center;
     display: flex;
@@ -267,7 +275,7 @@ section h2 {
 }
 
 .contato a {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
     font-size: 1.1rem;
     transition: 0.3s;
@@ -280,24 +288,26 @@ section h2 {
 .contato i {
     color: #8b5cf6;
     margin-right: 10px;
-    font-size: 1.2rem;
 }
 
+/* ============================= */
+/* RODAPÉ */
+/* ============================= */
 footer {
     text-align: center;
-    padding: 30px;
-    background: #111;
-    margin-top: 50px;
-    color: #bdbdbd;
+    padding: 25px;
+    background: #111118;
+    color: #b0b0bc;
+    margin-top: 40px;
 }
 
 /* ============================= */
-/* RESPONSIVO PARA CELULARES */
+/* RESPONSIVO */
 /* ============================= */
-@media (max-width: 768px) {
+@media (max-width: 850px) {
     .navbar {
         flex-direction: column;
-        gap: 15px;
+        gap: 12px;
         padding: 15px 5%;
     }
 
@@ -310,14 +320,62 @@ footer {
     .hero {
         flex-direction: column;
         text-align: center;
-        padding-top: 40px;
+        padding-top: 50px;
     }
 
     .hero h1 {
-        font-size: 40px;
+        font-size: 42px;
     }
 
     .hero-img img {
-        width: 220px;
+        width: 240px;
+    }
+
+    .botoes {
+        justify-content: center;
+    }
+
+    .redes {
+        justify-content: center;
     }
 }
+const texto = document.getElementById("typing");
+const frases = [
+    "Estudante de TI",
+    "Desenvolvedor Web",
+    "Focado em Tecnologia",
+    "Criador de Soluções"
+];
+
+let indiceFrase = 0;
+let indiceLetra = 0;
+let estaApagando = false;
+
+function digitar() {
+    const fraseAtual = frases[indiceFrase];
+
+    if (!estaApagando) {
+        texto.textContent = fraseAtual.substring(0, indiceLetra + 1);
+        indiceLetra++;
+    } else {
+        texto.textContent = fraseAtual.substring(0, indiceLetra - 1);
+        indiceLetra--;
+    }
+
+    let velocidade = estaApagando ? 40 : 110;
+
+    if (!estaApagando && indiceLetra === fraseAtual.length) {
+        velocidade = 2200;
+        estaApagando = true;
+    }
+
+    if (estaApagando && indiceLetra === 0) {
+        estaApagando = false;
+        indiceFrase = (indiceFrase + 1) % frases.length;
+        velocidade = 450;
+    }
+
+    setTimeout(digitar, velocidade);
+}
+
+window.addEventListener("load", digitar);
