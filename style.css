@@ -15,11 +15,12 @@ body {
     background: linear-gradient(rgba(13, 13, 13, 0.75), rgba(13, 13, 13, 0.85)),
         url("assets/img/Tecnology.jpg") center center / cover no-repeat;
     background-size: cover;
-    backdrop-filter: blur(3px); /* Valor válido */
+    backdrop-filter: blur(3px);
+    padding-top: 80px; /* Espaço para não ficar coberto pela barra fixa */
 }
 
 /* ============================= */
-/* NAVBAR */
+/* NAVBAR - CORRIGIDA */
 /* ============================= */
 header {
     position: fixed;
@@ -27,36 +28,38 @@ header {
     top: 0;
     left: 0;
     z-index: 1000;
-    background-color: #0a0a0f; /* Fundo fixo para não ficar transparente */
-    padding: 12px 5%;
+    background-color: #0a0a0f; /* Fundo escuro sólido */
+    padding: 15px 5%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3); /* Sombra para separar do conteúdo */
 }
 
-/* Barra de navegação geral */
 .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 5%;
-    background-color: #0a0a0f; /* cor de fundo escura */
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    flex-wrap: wrap; /* evita quebrar em telas pequenas */
-    gap: 20px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 /* Logo */
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
 .navbar .logo img {
-    height: 40px; /* altura ideal para não ficar muito grande/pequena */
+    height: 40px;
     width: auto;
-    display: block;
+    object-fit: contain;
 }
 
 /* Menu */
 .navbar .menu {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 35px;
     margin: 0;
     padding: 0;
 }
@@ -65,38 +68,39 @@ header {
     color: #ffffff;
     text-decoration: none;
     font-size: 1rem;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 .navbar .menu a:hover {
-    color: #9d4edd; /* roxo combinando com seu botão */
+    color: #8b5cf6;
 }
 
-/* Botão Baixar Currículo */
+/* Botão Currículo */
 .btn-cv {
-    background-color: #9d4edd;
+    background: #8b5cf6;
     color: white;
-    padding: 8px 18px;
-    border-radius: 6px;
     text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
     font-size: 0.95rem;
-    white-space: nowrap; /* não deixa o texto quebrar linha */
-    transition: background 0.3s;
+    white-space: nowrap;
+    transition: all 0.3s ease;
 }
 
 .btn-cv:hover {
-    background-color: #7b2cbf;
+    background: #6d28d9;
+    transform: scale(1.03);
 }
 
 /* ============================= */
 /* HERO */
 /* ============================= */
 .hero {
-    min-height: 100vh; /* Ajustado para ocupar a tela toda */
+    min-height: 100vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 120px 8% 80px;
+    padding: 40px 8%;
     gap: 50px;
     flex-wrap: wrap;
 }
@@ -113,7 +117,7 @@ header {
 .hero h2 {
     color: #8b5cf6;
     margin-bottom: 20px;
-    min-height: 45px; /* Espaço fixo para o efeito de digitação */
+    min-height: 45px;
     font-size: 2rem;
 }
 
@@ -157,7 +161,7 @@ header {
 }
 
 /* ============================= */
-/* REDES SOCIAIS */
+/* REDES */
 /* ============================= */
 .redes {
     margin-top: 40px;
@@ -188,17 +192,16 @@ header {
 }
 
 /* ============================= */
-/* SEÇÕES GERAIS */
+/* SEÇÕES */
 /* ============================= */
 section {
-    padding: 100px 8%;
+    padding: 80px 8%;
 }
 
 section h2 {
     text-align: center;
     font-size: 40px;
     margin-bottom: 40px;
-    color: #fff;
 }
 
 /* ============================= */
@@ -223,7 +226,7 @@ section h2 {
 .card:hover {
     transform: translateY(-10px);
     border-color: #8b5cf6;
-    box-shadow: 0 0 20px #8b5cf640;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
 }
 
 /* ============================= */
@@ -245,7 +248,7 @@ section h2 {
 
 .projeto:hover {
     transform: translateY(-10px);
-    box-shadow: 0 0 25px #8b5cf640;
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.3);
     border-color: #8b5cf6;
 }
 
@@ -284,7 +287,6 @@ section h2 {
 /* ============================= */
 .contato {
     text-align: center;
-    line-height: 40px;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -320,53 +322,12 @@ footer {
 }
 
 /* ============================= */
-/* BOTÃO VOLTAR AO TOPO */
-/* ============================= */
-#topo {
-    position: fixed;
-    right: 30px;
-    bottom: 30px;
-    width: 50px;
-    height: 50px;
-    border: none;
-    border-radius: 50%;
-    background: #8b5cf6;
-    color: white;
-    font-size: 22px;
-    cursor: pointer;
-    display: none;
-    transition: 0.3s;
-    box-shadow: 0 0 15px #8b5cf660;
-}
-
-#topo:hover {
-    background: #6d28d9;
-}
-
-/* ============================= */
-/* ANIMAÇÕES DE ENTRADA */
-/* ============================= */
-section,
-.card,
-.projeto {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 0.8s ease;
-}
-
-.mostrar {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* ============================= */
-/* RESPONSIVO - CELULARES E TABLETS */
+/* RESPONSIVO */
 /* ============================= */
 @media (max-width: 900px) {
     .navbar {
         flex-direction: column;
         gap: 15px;
-        padding: 15px 5%;
     }
 
     .menu {
@@ -378,7 +339,7 @@ section,
     .hero {
         flex-direction: column;
         text-align: center;
-        padding-top: 160px;
+        padding-top: 60px;
     }
 
     .hero h1 {
@@ -395,10 +356,6 @@ section,
 
     .redes {
         justify-content: center;
-    }
-
-    section h2 {
-        font-size: 32px;
     }
 }
 
