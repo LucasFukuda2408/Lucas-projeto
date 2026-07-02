@@ -31,63 +31,61 @@ header {
     padding: 12px 5%;
 }
 
+/* Barra de navegação geral */
 .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
+    padding: 15px 5%;
+    background-color: #0a0a0f; /* cor de fundo escura */
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    flex-wrap: wrap; /* evita quebrar em telas pequenas */
+    gap: 20px;
 }
 
-/* Logo como imagem */
-.navbar .logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-
+/* Logo */
 .navbar .logo img {
-    height: 42px;
+    height: 40px; /* altura ideal para não ficar muito grande/pequena */
     width: auto;
-    object-fit: contain;
+    display: block;
 }
 
-/* Removido o estilo de texto da logo, pois agora é imagem */
-
-.navbar.scroll {
-    background: #111;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
-.menu {
+/* Menu */
+.navbar .menu {
     display: flex;
     list-style: none;
-    gap: 35px;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
 }
 
-.menu a {
-    color: white;
+.navbar .menu a {
+    color: #ffffff;
     text-decoration: none;
-    transition: 0.3s;
     font-size: 1rem;
+    transition: color 0.3s;
 }
 
-.menu a:hover {
-    color: #8b5cf6;
+.navbar .menu a:hover {
+    color: #9d4edd; /* roxo combinando com seu botão */
 }
 
+/* Botão Baixar Currículo */
 .btn-cv {
-    background: #8b5cf6;
+    background-color: #9d4edd;
     color: white;
+    padding: 8px 18px;
+    border-radius: 6px;
     text-decoration: none;
-    padding: 10px 22px;
-    border-radius: 10px;
-    transition: 0.3s;
-    white-space: nowrap;
+    font-size: 0.95rem;
+    white-space: nowrap; /* não deixa o texto quebrar linha */
+    transition: background 0.3s;
 }
 
 .btn-cv:hover {
-    transform: scale(1.05);
-    background: #6d28d9;
+    background-color: #7b2cbf;
 }
 
 /* ============================= */
